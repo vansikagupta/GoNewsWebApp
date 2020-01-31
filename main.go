@@ -3,9 +3,9 @@ package main
 import (
 	"net/http"
 	"fmt"
-	"net/url"
 	"time"
 	"encoding/json"
+	"github.com/gorilla/mux"
 ) 
 
 var apiKey = "7d3b57a788f043a6ad219ccf7ae2ac03"
@@ -37,6 +37,7 @@ func indexHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func searchHandler(w http.ResponseWriter, r *http.Request) {
+	/*
 	u, err := url.Parse(r.URL.String())
 	if err != nil {
 		w.Write([]byte("Internal Server Error"))
@@ -46,6 +47,10 @@ func searchHandler(w http.ResponseWriter, r *http.Request) {
 	
 	params := u.Query()
 	searchKey := params.Get("q")
+	*/
+	
+	params := mux.Vars(r)
+	searchKey := params["searchKey"]
 	
 	fmt.Println("Search Query is: ", searchKey)
 	endpoint := fmt.Sprintf("https://newsapi.org/v2/everything?q=%s",searchKey)
@@ -76,10 +81,14 @@ func searchHandler(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(result)
 }
 
-func main() {
-	mux := http.NewServeMux()
+func handleRequests() {
+	myRouter := mux.NewRouter().StrictSlash(true)
 	
-	mux.HandleFunc("/", indexHandler)
-	mux.HandleFunc("/search", searchHandler)
-	http.ListenAndServe(":9000",mux)
+	myRouter.HandleFunc("/", indexHandler)
+	myRouter.HandleFunc("/search/{searchKey}", searchHandler)
+	http.ListenAndServe(":9000",myRouter)
+}
+
+func main() {
+	handleRequests()
 }
