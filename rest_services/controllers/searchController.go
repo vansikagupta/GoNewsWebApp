@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"encoding/json"
 	"github.com/gorilla/mux"
-	"github.com/vansikagupta/newsWebApp/models"
+	"github.com/vansikagupta/newsWebApp/rest_services/models"
 )
 
 var apiKey = "7d3b57a788f043a6ad219ccf7ae2ac03"
@@ -25,7 +25,7 @@ func SearchHandler(w http.ResponseWriter, r *http.Request) {
 	res, err := client.Do(req)
 	if err != nil {
 		w.Write([]byte("Internal Server Error"))
-		w.WriteHeader(http.StatusInternalServerError)
+		fmt.Println(err)
 		return
 	}
 	defer res.Body.Close()
@@ -34,11 +34,13 @@ func SearchHandler(w http.ResponseWriter, r *http.Request) {
 	err = json.NewDecoder(res.Body).Decode(&result)
 	if err != nil {
 		w.Write([]byte("Internal Server Error"))
+		fmt.Println(err)
 		return
 	}
 	//fmt.Println(result)
 	//we can use this result in template
 	
 	w.Header().Set("Content-Type", "application/json")
+	w.Header().Set("Access-Control-Allow-Origin", "*")
 	json.NewEncoder(w).Encode(result)
 }

@@ -1,0 +1,14 @@
+.article-card {
+    max-width: 80%;
+    margin-left: 10%;
+    align-content: center;
+    margin-bottom: 1%;
+    margin-top: 2%;
+  }
+
+.internalMatGrid{ min-width:100%;}
+
+a:link, a:visited {
+  color: black;
+  text-decoration: none;
+}

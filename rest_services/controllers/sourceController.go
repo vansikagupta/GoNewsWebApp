@@ -4,7 +4,7 @@ import (
 	"net/http"
 	"fmt"
 	"encoding/json"
-	"github.com/vansikagupta/newsWebApp/models"
+	"github.com/vansikagupta/newsWebApp/rest_services/models"
 )
 
 func GetAllSource (w http.ResponseWriter, r *http.Request) {
