@@ -6,7 +6,8 @@
     margin-top: 2%;
   }
 
-.internalMatGrid{ min-width:100%;}
+.internalMatGrid{ 
+  min-width:100%;}
 
 a:link, a:visited {
   color: black;

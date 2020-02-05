@@ -35,9 +35,9 @@ export class ResultsComponent implements OnInit {
     .subscribe( data => {
       //console.log(data)
       this.articles = data;
-      this.articles.forEach(element => {
+      /*this.articles.forEach(element => {
         console.log(element.Title)
-      });
+      });*/
       //console.log(this.articles)
     },
     error => {

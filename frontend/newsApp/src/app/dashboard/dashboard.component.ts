@@ -9,9 +9,9 @@ import { MessageService } from '../_services/message-pass.service';
 })
 export class DashboardComponent implements OnInit {
   breakpoint: number;
-  topics: string[] = ['Bitcoin', 'Artificial Intelligence', 'Cryptocurrency',
-                      'Startups', 'Data Science', 'Cloud', 'Programming', 'Coding Practices',
-                      'Golang','Microservices', 'Big Data', 'Science']
+  topics: string[] = ['Bitcoin', 'ArtificialIntelligence', 'Cryptocurrency',
+                      'Startups', 'DataScience', 'Cloud', 'Programming', 'CodingPractices',
+                      'Golang','Microservices', 'BigData', 'Science']
   searchKey: string;
 
   constructor(private router: Router, private messageService: MessageService) { }

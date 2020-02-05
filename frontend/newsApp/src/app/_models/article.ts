@@ -8,7 +8,7 @@ export class Article{
         public Description: string,
         public URL: string,
         public URLToImage: string,
-        public PublishedAt: Time,
+        public PublishedAt: Date,
         public Content: string
     ){}
 }

@@ -1,24 +1,24 @@
 
 <mat-card class="article-card">
     <a [href]="article.URL" target="_blank">
-    <mat-grid-list cols="3" rows="2" rowHeight="2:1">   
-        <mat-grid-tile colspan="2">
+    <mat-grid-list cols="3" rowHeight="3:2">   
+        <mat-grid-tile colspan="2" >
             <div class='internalMatGrid' >
-                <mat-grid-list cols="3" rowHeight="4:1">
-                    <mat-grid-tile colspan="3">
+                <mat-grid-list cols="1" rowHeight="9:1">
+                    <mat-grid-tile rowspan="1">
                         <mat-card-header>
                             <mat-card-title>{{article.Title}}</mat-card-title>
                         </mat-card-header>
                     </mat-grid-tile>
-                    <mat-grid-tile colspan="3">
+                    <mat-grid-tile rowspan="1">
                         <mat-card-content>
                             <p><br>{{article.Content}}</p>
                         </mat-card-content>
                     </mat-grid-tile>
-                    <mat-grid-tile colspan="3">
+                    <mat-grid-tile rowspan="1">
                         <mat-card-footer>
                             <div>{{article.source}}</div>
-                            <div>{{article.PublishedAt}}</div>
+                            <div>{{article.PublishedAt | date}}</div>
                         </mat-card-footer>
                     </mat-grid-tile>
                 </mat-grid-list>

@@ -1,13 +1,17 @@
-<mat-form-field class="search-form">
+<div class="search-bar">
+  <mat-form-field class="search-form">
     <input matInput placeholder="Search" name="searchKey" type="text" [(ngModel)]="searchKey">
-</mat-form-field>
-<button type="submit" mat-raised-button color="accent" (click)="getArticle()">Search</button>
+  </mat-form-field>
+  <button type="submit" mat-raised-button color="accent" (click)="getArticle()">Search</button>
+</div>
 <br>
+
+<h3 class="instruction">Search a Keyword or Choose from Popular Topics</h3>
 
 <mat-grid-list [cols]="breakpoint" rowHeight="4:2" (window:resize)="onResize($event)">
     <div *ngFor="let topic of topics">
       <mat-grid-tile>
-        <mat-card (click)="setSearchKey(topic)">
+        <mat-card class="card-item" (click)="setSearchKey(topic)">
             <div class="thumbnail">{{ topic }}</div>
         </mat-card>
       </mat-grid-tile>

@@ -1,14 +1,8 @@
 <div class="background">
- <mat-toolbar color="primary">
-    <span>NewsFeed</span>
-    <span class="spacer"></span>
-    <a mat-button routerLink="/dashboard" color="accent"><mat-icon color="accent" class="icon">dashboard</mat-icon>Dashboard</a>
-    <form>
-      <input type="text" class="form-control" name="searchKey" [(ngModel)]="searchKey">
-      <button mat-icon-button color="accent" type="submit" (click)="getArticle()">
-        <mat-icon>search</mat-icon>
-      </button>
-    </form>
+  <mat-toolbar color="primary">
+      <span>NewsFeed</span>
+      <span class="spacer"></span>
+      <button mat-button routerLink="/dashboard" color="accent"><mat-icon color="accent" class="icon">dashboard</mat-icon>Dashboard</button>
   </mat-toolbar>
   
   <div class="app-body">
