@@ -1,0 +1,2 @@
+Hint: in a big project, a best practice should be to create a specific module for Material and export MatModules to be used in all the other modules and components of your project by importing only one module, your “MaterialModule”. Otherwise, you have to import the MatModules every time in each module.
+

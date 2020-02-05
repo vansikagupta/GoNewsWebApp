@@ -5,3 +5,12 @@
 .icon {
     padding: 0 14px;
 }
+
+.background{
+    background-color:  #f8f9f9
+    ;
+}
+
+.app-body{
+    color: orange;
+}

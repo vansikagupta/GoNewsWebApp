@@ -1,1 +1,17 @@
 <p>dashboard works!</p>
+
+<mat-form-field class="search-form">
+    <input matInput placeholder="Search" name="searchKey" type="text" [(ngModel)]="searchKey">
+</mat-form-field>
+<button type="submit" mat-raised-button color="accent" (click)="getArticle()">Search</button>
+<br>
+
+<mat-grid-list [cols]="breakpoint" rowHeight="4:2" (window:resize)="onResize($event)">
+    <div *ngFor="let topic of topics">
+      <mat-grid-tile>
+        <mat-card>
+            <div class="thumbnail">{{ topic }}</div>
+        </mat-card>
+      </mat-grid-tile>
+    </div>
+</mat-grid-list>

@@ -10,14 +10,14 @@ import { ArticleComponent } from './article/article.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { MaterialModule } from './material.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { ResultsComponent } from './results/results.component'
+import { ResultsComponent } from './results/results.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ArticleComponent,
     DashboardComponent,
-    ResultsComponent,
+    ResultsComponent
   ],
   imports: [
     BrowserModule,
