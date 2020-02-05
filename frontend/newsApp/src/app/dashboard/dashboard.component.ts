@@ -34,6 +34,11 @@ export class DashboardComponent implements OnInit {
       this.messageService.clearMessage();
   }
 
+  setSearchKey(topic: string){
+    this.searchKey = topic;
+    this.getArticle();
+  }
+
   getArticle(){
     this.sendMessage(this.searchKey)
     this.router.navigate(['/results'])
